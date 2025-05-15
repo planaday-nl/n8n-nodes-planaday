@@ -1,46 +1,165 @@
-![Banner image](https://user-images.githubusercontent.com/10284570/173569848-c624317f-42b1-45a6-ab09-f0ea3c247648.png)
+# n8n-nodes-planaday
 
-# n8n-nodes-starter
+[![npm version](https://badge.fury.io/js/n8n-nodes-planaday.svg)](https://badge.fury.io/js/n8n-nodes-planaday)
 
-This repo contains example nodes to help you get started building your own custom integrations for [n8n](n8n.io). It includes the node linter and other dependencies.
+This is an n8n community node for integrating with the [Planaday API](https://apidocs.planaday.nl). It allows you to automate your course booking, student management, and other Planaday-related workflows within n8n.
 
-To make your custom node available to the community, you must create it as an npm package, and [submit it to the npm registry](https://docs.npmjs.com/packages-and-modules/contributing-packages-to-the-registry).
+[n8n](https://n8n.io/) is a [fair-code licensed](https://docs.n8n.io/reference/license/) workflow automation platform.
+
+## Features
+
+This node integrates with all major Planaday API resources:
+
+- **Booking**: Create, retrieve, update, delete, and mark bookings as paid
+- **Company**: Retrieve company details and lists
+- **Course**: Retrieve course details, dayparts, materials, and images
+- **Course Template**: Retrieve course template details and lists
+- **Daypart**: Retrieve daypart details and materials
+- **Extra Fields**: Retrieve extra fields configuration
+- **Image**: Retrieve image details
+- **Instructor**: Manage instructors and their assignments to courses/dayparts
+- **Label**: Retrieve label information
+- **Location**: Retrieve location details
+- **Ping**: Test API connectivity
+- **Student**: Create, retrieve, and update student information
 
 ## Prerequisites
 
-You need the following installed on your development machine:
+- n8n version 1.0.0 or later
+- A Planaday account with API access enabled
+- An API key from your Planaday account
 
-* [git](https://git-scm.com/downloads)
-* Node.js and pnpm. Minimum version Node 20. You can find instructions on how to install both using nvm (Node Version Manager) for Linux, Mac, and WSL [here](https://github.com/nvm-sh/nvm). For Windows users, refer to Microsoft's guide to [Install NodeJS on Windows](https://docs.microsoft.com/en-us/windows/dev-environment/javascript/nodejs-on-windows).
-* Install n8n with:
-  ```
-  npm install n8n -g
-  ```
-* Recommended: follow n8n's guide to [set up your development environment](https://docs.n8n.io/integrations/creating-nodes/build/node-development-environment/).
+## Installation
 
-## Using this starter
+Follow the [installation guide](https://docs.n8n.io/integrations/community-nodes/installation/) in the n8n community nodes documentation.
 
-These are the basic steps for working with the starter. For detailed guidance on creating and publishing nodes, refer to the [documentation](https://docs.n8n.io/integrations/creating-nodes/).
+### Using npm
 
-1. [Generate a new repository](https://github.com/n8n-io/n8n-nodes-starter/generate) from this template repository.
-2. Clone your new repo:
-   ```
-   git clone https://github.com/<your organization>/<your-repo-name>.git
-   ```
-3. Run `npm i` to install dependencies.
-4. Open the project in your editor.
-5. Browse the examples in `/nodes` and `/credentials`. Modify the examples, or replace them with your own nodes.
-6. Update the `package.json` to match your details.
-7. Run `npm lint` to check for errors or `npm lintfix` to automatically fix errors when possible.
-8. Test your node locally. Refer to [Run your node locally](https://docs.n8n.io/integrations/creating-nodes/test/run-node-locally/) for guidance.
-9. Replace this README with documentation for your node. Use the [README_TEMPLATE](README_TEMPLATE.md) to get started.
-10. Update the LICENSE file to use your details.
-11. [Publish](https://docs.npmjs.com/packages-and-modules/contributing-packages-to-the-registry) your package to npm.
+```bash
+npm install n8n-nodes-planaday
+```
 
-## More information
+### Manual Installation
 
-Refer to our [documentation on creating nodes](https://docs.n8n.io/integrations/creating-nodes/) for detailed information on building your own nodes.
+1. Download the latest version from the [releases page](https://github.com/planaday-nl/n8n-nodes-planaday/releases)
+2. Extract the contents into your n8n custom nodes directory
+3. Restart n8n
+
+## Configuration
+
+### API Credentials
+
+1. In your n8n instance, go to **Settings** > **Credentials**
+2. Click on **New Credential**
+3. Select the **Planaday API** credential type
+4. Enter the following details:
+   - **API Key**: Your Planaday API key
+   - **Company Code**: Your company code in Planaday (e.g., "myname" from myname.planaday.nl)
+5. Click **Save**
+
+## Usage
+
+### Booking Operations
+
+- **Create**: Create a new booking for a student in a course
+- **Get**: Retrieve details of a specific booking
+- **Update**: Update an existing booking
+- **Delete**: Delete a booking
+- **Mark as Paid**: Mark a booking as paid with payment details
+
+### Company Operations
+
+- **Get**: Retrieve details of a specific company
+- **Get Many**: Retrieve a list of companies with optional filtering
+
+### Course Operations
+
+- **Get**: Retrieve details of a specific course
+- **Get Many**: Retrieve a list of courses with optional filtering
+- **Get Dayparts**: Retrieve dayparts associated with a course
+- **Get Materials**: Retrieve materials associated with a course
+- **Get Images**: Retrieve images associated with a course
+
+### Course Template Operations
+
+- **Get**: Retrieve details of a specific course template
+- **Get Many**: Retrieve a list of course templates with optional filtering
+
+### Daypart Operations
+
+- **Get**: Retrieve details of a specific daypart
+- **Get Materials**: Retrieve materials associated with a daypart
+
+### Extra Fields Operations
+
+- **Get Many**: Retrieve a list of extra fields configuration
+
+### Image Operations
+
+- **Get**: Retrieve details of a specific image
+
+### Instructor Operations
+
+- **Get**: Retrieve details of a specific instructor
+- **Get Many**: Retrieve a list of instructors with optional filtering
+- **Add to Daypart**: Assign an instructor to a daypart
+- **Remove from Daypart**: Remove an instructor from a daypart
+- **Add to Course**: Assign an instructor to a course
+- **Remove from Course**: Remove an instructor from a course
+
+### Label Operations
+
+- **Get Many**: Retrieve a list of labels
+
+### Location Operations
+
+- **Get**: Retrieve details of a specific location
+
+### Ping Operations
+
+- **Ping**: Test the API connection
+
+### Student Operations
+
+- **Get**: Retrieve details of a specific student
+- **Create**: Create a new student
+- **Update**: Update an existing student
+
+## Example Workflows
+
+### Create a Student and Book a Course
+
+1. **Start Node**: Manual trigger
+2. **Planaday Node**: Create a student
+   - Resource: Student
+   - Operation: Create
+   - First Name: {{$json.firstName}}
+   - Last Name: {{$json.lastName}}
+   - Email: {{$json.email}}
+3. **Planaday Node**: Create a booking
+   - Resource: Booking
+   - Operation: Create
+   - Course ID: {{$json.courseId}}
+   - Student ID: {{$node["Planaday"].json.id}}
+
+### Retrieve Course Information
+
+1. **Start Node**: Manual trigger with course ID input
+2. **Planaday Node**: Get course details
+   - Resource: Course
+   - Operation: Get
+   - Course ID: {{$json.courseId}}
+3. **Planaday Node**: Get course dayparts
+   - Resource: Course
+   - Operation: Get Dayparts
+   - Course ID: {{$json.courseId}}
+
+## Resources
+
+- [Planaday API Documentation](https://apidocs.planaday.nl)
+- [n8n Community Nodes Documentation](https://docs.n8n.io/integrations/community-nodes/)
 
 ## License
 
-[MIT](https://github.com/n8n-io/n8n-nodes-starter/blob/master/LICENSE.md)
+[MIT](LICENSE.md)
+
