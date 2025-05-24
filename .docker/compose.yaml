@@ -5,6 +5,8 @@ services:
     restart: unless-stopped
     ports:
       - 5678:5678
+    environment:
+      - NODE_TLS_REJECT_UNAUTHORIZED=0
     volumes:
       - /etc/localtime:/etc/localtime:ro
       - ./data:/home/node/.n8n:rw

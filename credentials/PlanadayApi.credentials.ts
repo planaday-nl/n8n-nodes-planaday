@@ -23,10 +23,10 @@ export class PlanadayApi implements ICredentialType {
 			displayName: 'API URL',
 			name: 'apiUrl',
 			type: 'string',
-			default: 'https://apitest.api.planaday.net/v1',
+			default: 'https://apitest.api.planaday.nl',
 			required: true,
-			description: 'The base URL for the Planaday API (e.g., https://api.planaday.net/v1 for production)',
-			placeholder: 'https://api.planaday.net/v1',
+			description: 'The base URL for the Planaday API (e.g., https://api.planaday.nl for production)',
+			placeholder: 'https://[customername].api.planaday.nl',
 		},
 	];
 
@@ -42,8 +42,8 @@ export class PlanadayApi implements ICredentialType {
 
 	test: ICredentialTestRequest = {
 		request: {
-			baseURL: '={{$credentials.apiUrl}}',
-			url: '/student',
+			baseURL: '={{$credentials.apiUrl}}/v1',
+			url: '/ping',
 			method: 'GET',
 		},
 	};

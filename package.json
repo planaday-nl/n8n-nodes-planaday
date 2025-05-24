@@ -11,7 +11,7 @@
     "lint": "eslint nodes credentials package.json",
     "lintfix": "eslint nodes credentials package.json --fix",
     "prepublishOnly": "pnpm build && pnpm lint -c .eslintrc.prepublish.js nodes credentials package.json",
-    "docker-build": "cd .docker && mkdir data && sudo chown -R 1000:1000 data && docker compose up",
+    "docker-build": "cd .docker && mkdir -p data && sudo chown -R 1000:1000 data && docker compose up",
     "start": "pnpm build && docker restart n8n-dev && docker logs n8n-dev -f"
   },
   "files": [
