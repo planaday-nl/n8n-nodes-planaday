@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:apidocs.planaday.nl)",
+      "WebFetch(domain:docs.n8n.io)"
+    ],
+    "deny": []
+  }
+}
