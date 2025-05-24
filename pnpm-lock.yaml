@@ -9,25 +9,25 @@ importers:
   .:
     devDependencies:
       '@typescript-eslint/parser':
-        specifier: ^7.15.0
+        specifier: ^7.18.0
         version: 7.18.0(eslint@8.57.1)(typescript@5.8.3)
       eslint:
-        specifier: ^8.56.0
+        specifier: ^8.57.1
         version: 8.57.1
       eslint-plugin-n8n-nodes-base:
-        specifier: ^1.16.1
+        specifier: ^1.16.3
         version: 1.16.3(eslint@8.57.1)(typescript@5.8.3)
       gulp:
         specifier: ^4.0.2
         version: 4.0.2
       n8n-workflow:
-        specifier: '*'
+        specifier: ^1.82.0
         version: 1.82.0
       prettier:
-        specifier: ^3.3.2
+        specifier: ^3.5.3
         version: 3.5.3
       typescript:
-        specifier: ^5.5.3
+        specifier: ^5.8.3
         version: 5.8.3
 
 packages:
