@@ -46,7 +46,7 @@
     "node": ">=18.10",
     "pnpm": ">=9.1"
   },
-  "packageManager": "pnpm@9.1.4",
+  "packageManager": "pnpm@10.11.0",
   "main": "index.js",
   "devDependencies": {
     "@typescript-eslint/parser": "^8.33.0",

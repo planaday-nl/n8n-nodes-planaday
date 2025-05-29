@@ -20,7 +20,6 @@ export const baseProperties: INodeProperties[] = [
 			},
 		],
 		default: 'student',
-		description: 'The resource to operate on.',
 	},
 	// Student Operations
 	{
@@ -42,7 +41,6 @@ export const baseProperties: INodeProperties[] = [
 			},
 		],
 		default: 'create',
-		description: 'The operation to perform.',
 	},
 	// Utility Operations
 	{
@@ -64,6 +62,5 @@ export const baseProperties: INodeProperties[] = [
 			},
 		],
 		default: 'ping',
-		description: 'The operation to perform.',
 	},
 ];
