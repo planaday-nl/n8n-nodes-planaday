@@ -19,7 +19,7 @@ export async function executePing(this: IExecuteFunctions, itemIndex: number): P
 
 		const result = typeof responseData === 'string' ? { message: responseData } : responseData;
 
-		// For a global operation like ping, we typically return one item of data.
+    // For a global operation like ping, we typically return one item of data.
 		// If this function is guaranteed to be called only once, itemIndex might be irrelevant for pairedItem.
 		returnData.push({
 			json: result,

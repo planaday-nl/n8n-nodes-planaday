@@ -14,9 +14,15 @@ export const baseProperties: INodeProperties[] = [
 				name: 'Student',
 				value: 'student',
 			},
+			{
+				name: 'Utility',
+				value: 'utility',
+			},
 		],
 		default: 'student',
+		description: 'The resource to operate on.',
 	},
+	// Student Operations
 	{
 		displayName: 'Operation',
 		name: 'operation',
@@ -36,5 +42,28 @@ export const baseProperties: INodeProperties[] = [
 			},
 		],
 		default: 'create',
+		description: 'The operation to perform.',
+	},
+	// Utility Operations
+	{
+		displayName: 'Operation',
+		name: 'operation',
+		type: 'options',
+		noDataExpression: true,
+		displayOptions: {
+			show: {
+				resource: ['utility'],
+			},
+		},
+		options: [
+			{
+				name: 'Ping',
+				value: 'ping',
+				description: 'Checks API connectivity',
+				action: 'Ping the API',
+			},
+		],
+		default: 'ping',
+		description: 'The operation to perform.',
 	},
 ];
