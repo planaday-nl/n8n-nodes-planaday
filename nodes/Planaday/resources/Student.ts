@@ -365,7 +365,7 @@ export async function createStudent(
 			'planadayApi',
 			{
 				method: 'POST',
-				url: '={{$credentials.apiUrl}}/v1/student',
+                                url: '/v1/student',
 				body,
 				json: true,
 			},
