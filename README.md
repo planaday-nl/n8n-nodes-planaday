@@ -93,12 +93,15 @@ n8n-nodes-planaday/
 │   └── Planaday/
 │       ├── Planaday.node.ts          # Main node implementation
 │       └── planaday.svg              # Node icon
-├── dist/                             # Built files (generated)
-├── index.js                          # Main export file
+├── dist/                             # Built files (compiled output)
+│   └── index.js                      # Compiled JavaScript entry
+├── index.ts                          # Main export file
 ├── package.json                      # Package configuration
 ├── tsconfig.json                     # TypeScript configuration
 └── README.md                         # This file
 ```
+
+The compiled output resides in `dist/index.js`.
 
 ### Common Issues
 
